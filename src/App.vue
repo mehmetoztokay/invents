@@ -1,10 +1,10 @@
-<script setup>
-  import AppHeader from './components/shared/appHeader.vue'
-</script>
 <template>
   <AppHeader />
   <router-view></router-view>
 </template>
+<script setup>
+  import AppHeader from './components/shared/appHeader.vue'
+</script>
 <style lang="scss">
   // Font Nunito
   @font-face {

@@ -25,7 +25,6 @@
 </template>
 <script setup>
   import Logo from '../layout/logo.vue'
-  import Button from '../layout/button.vue'
 </script>
 <style lang="scss">
   @import '@/assets/scss/_var.scss';
@@ -33,7 +32,6 @@
   .header {
     position: absolute;
     width: 100%;
-    background: $color-black-off;
     padding: rem(10) 0;
 
     .container {
