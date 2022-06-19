@@ -1,5 +1,5 @@
 {
-  "name": "invents",
+  "name": "ivents",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
-    "vite": "^2.9.9"
+    "vite": "^2.9.9",
+    "sass": "^1.52.3"
   }
 }

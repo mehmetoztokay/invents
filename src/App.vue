@@ -1,8 +1,8 @@
 <script setup>
-
+  import AppHeader from './components/appHeader.vue'
 </script>
 <template>
-<p>invents</p>
+  <div class="selam">Mehmet</div>
+  <AppHeader />
 </template>
-<style>
-</style>
+<style lang="scss"></style>
