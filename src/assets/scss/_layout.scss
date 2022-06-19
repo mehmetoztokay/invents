@@ -6,13 +6,27 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+input::placeholder,
+textarea,
+textarea::placeholder {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 html {
-  font-size: 14px;
+  font-size: $font-size-base + px;
 }
 
 body {
   font-family: $font-primary;
   font-weight: $weight-400;
   color: $color-black-off;
-  font-size: 14px;
+  line-height: 1.5;
 }
