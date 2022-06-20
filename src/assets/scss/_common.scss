@@ -8,3 +8,37 @@
 .absolute-header {
   padding-top: rem(82);
 }
+
+// Defaults
+.text-center {
+  text-align: center;
+}
+
+.line-height-1 {
+  line-height: 1;
+}
+
+// Colors
+.color-primary {
+  color: $color-primary;
+}
+
+.color-primary-dark {
+  color: $color-primary-dark;
+}
+
+.color-white {
+  color: $color-white;
+}
+
+.color-white-off {
+  color: $color-white-off;
+}
+
+.color-black {
+  color: $color-black;
+}
+
+.color-black-off {
+  color: $color-black-off;
+}

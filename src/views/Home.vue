@@ -1,20 +1,52 @@
 <template>
   <div class="main">
-    <div class="banner absolute-header">selam</div>
+    <div class="banner absolute-header">
+      <div class="container">
+        <div class="slogan">
+          <p class="line-height-1">her anın <span class="color-primary">iventsle</span></p>
+        </div>
+        <div class="filter-container">
+          <FilterMain />
+        </div>
+      </div>
+    </div>
     <div style="height: 7000px"></div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+  import FilterMain from '../components/FilterMain.vue'
+  import { provide } from 'vue'
+
+  const items = [
+    {
+      title: 'Mehmet',
+      value: '1'
+    },
+    {
+      title: 'Ahmet',
+      value: '2'
+    },
+    {
+      title: 'Selam',
+      value: '3'
+    },
+    {
+      title: 'Reis',
+      value: '4'
+    }
+  ]
+
+  provide('items', items)
+</script>
 <style lang="scss" scoped>
   @import '@/assets/scss/_var.scss';
   .banner {
     background-image: url('@/assets/img/home/banner-home.jpg');
     background-attachment: fixed;
-    min-height: rem(650);
     background-size: cover;
     background-position: center bottom;
     position: relative;
-    z-index: -1;
+    z-index: 0;
 
     &::after {
       content: '';
@@ -23,7 +55,32 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+    }
+
+    .container {
+      min-height: rem(700);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+
+      .slogan {
+        margin-top: 20vh;
+        p {
+          font-size: rem(80);
+          font-weight: bold;
+          color: #fff;
+          margin-bottom: rem(1);
+        }
+      }
+
+      .filter-container {
+        width: 100%;
+        margin-top: rem(120);
+      }
     }
   }
 </style>

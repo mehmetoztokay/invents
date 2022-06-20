@@ -33,6 +33,7 @@
     position: absolute;
     width: 100%;
     padding: rem(10) 0;
+    z-index: 1;
 
     .container {
       position: relative;
