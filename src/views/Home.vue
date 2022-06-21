@@ -5,7 +5,7 @@
         <div class="slogan">
           <p class="line-height-1 text-center">her anın <span class="color-primary">iventsle</span></p>
         </div>
-        <div class="filter-container" style="display: none">
+        <div class="filter-container">
           <FilterMain />
         </div>
       </div>
@@ -75,11 +75,40 @@
           color: #fff;
           margin-bottom: rem(1);
         }
+
+        @media screen and (max-width: $screen-lg) {
+          margin-top: 15vh;
+          p {
+            font-size: rem(60);
+          }
+        }
+
+        @media screen and (max-width: $screen-md) {
+          margin-top: 10vh;
+          p {
+            font-size: rem(50);
+          }
+        }
+
+        @media screen and (max-width: $screen-xs) {
+          margin-top: 7vh;
+          p {
+            font-size: rem(40);
+          }
+        }
       }
 
       .filter-container {
         width: 100%;
         margin-top: rem(120);
+
+        @media screen and (max-width: $screen-md) {
+          margin-top: rem(80);
+        }
+
+        @media screen and (max-width: $screen-xxl) {
+          margin-top: rem(50);
+        }
       }
     }
   }

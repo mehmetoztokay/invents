@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" :class="{ 'is-active': menuBtn }">
     <div class="container">
       <div class="navbar-brand">
         <router-link class="logo-container" to="/">
@@ -52,7 +52,6 @@
     z-index: 1;
 
     .container {
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -69,6 +68,17 @@
         overflow: hidden;
 
         .logo-container {
+          svg {
+            width: rem(190);
+            transition: $transition;
+            @media screen and (max-width: $screen-md) {
+              width: rem(150);
+            }
+
+            @media screen and (max-width: $screen-sm) {
+              width: rem(120);
+            }
+          }
         }
 
         .menu-btn {
@@ -164,10 +174,37 @@
 
             .nav {
               flex-direction: column;
-              gap: rem(35);
+              gap: 0;
               animation: opacityAnim 0.7s ease-in-out;
+
+              .nav-link {
+                padding: rem(15) 0;
+              }
             }
           }
+        }
+      }
+    }
+
+    @media screen and (max-width: $screen-md) {
+      &.is-active {
+        height: 100%;
+        left: 0%;
+        right: 0;
+        bottom: 0;
+        top: 0;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+          background-color: rgba($color-black-off, 0.3);
+          z-index: -1;
         }
       }
     }

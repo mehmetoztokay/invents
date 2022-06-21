@@ -48,14 +48,6 @@
         </div>
       </div>
     </div>
-    <div class="filter-item">
-      <div class="filter-item-title">
-        <p class="line-height-1 color-primary">Etkinlik</p>
-        <div class="filter-select">
-          <SelectItem @selectedOption="selectedOption" :itemList="eventList" />
-        </div>
-      </div>
-    </div>
     <div class="btn-filter">
       <Button>Ara</Button>
     </div>
@@ -141,15 +133,16 @@
   .filter {
     min-height: rem(100);
     margin: 0 auto;
-    background-color: $color-black;
-    max-width: calc(100% - rem(100));
-    border-radius: rem(50);
+    background-color: rgba($color-black, 0.7);
+    max-width: calc(100% - rem(180));
+    border-radius: rem(80);
     padding: rem(10) rem(80) rem(3) rem(80);
     display: flex;
+    flex-wrap: wrap;
 
     .filter-item {
-      max-width: rem(210);
-      padding: rem(15);
+      max-width: rem(260);
+      padding: rem(15) rem(25);
       .filter-item-title {
         font-size: rem(18);
         p {
@@ -210,6 +203,51 @@
       align-items: center;
       flex-grow: 1;
       justify-content: end;
+    }
+
+    @media screen and (max-width: $screen-xl) {
+      padding: rem(10) rem(30) rem(3) rem(30);
+      max-width: calc(100% - rem(120));
+
+      .filter-item {
+        max-width: rem(220);
+      }
+    }
+
+    @media screen and (max-width: $screen-lg) {
+      max-width: 100%;
+      .filter-item {
+        max-width: rem(190);
+      }
+    }
+
+    @media screen and (max-width: $screen-md) {
+      padding: rem(20) rem(30) rem(10) rem(30);
+      max-width: 100%;
+      border-radius: rem(20);
+      .filter-item {
+        max-width: 50%;
+        width: 50%;
+      }
+
+      .btn-filter {
+        justify-content: flex-start;
+        padding-left: rem(37);
+      }
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      .filter-item {
+        max-width: rem(180);
+      }
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      padding: rem(28) rem(14);
+      .filter-item {
+        width: 100%;
+        max-width: 100%;
+      }
     }
   }
 </style>

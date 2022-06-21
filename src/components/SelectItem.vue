@@ -103,12 +103,19 @@
       top: calc(100% + 5px);
       border-radius: 7px;
       width: 100%;
+      z-index: 1;
       max-height: rem(200);
       overflow-y: auto;
       scrollbar-width: 0;
       -ms-overflow-style: -ms-autohiding-scrollbar;
       &::-webkit-scrollbar {
         display: none;
+      }
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      .select-header {
+        background-color: $color-black-off;
       }
     }
   }
