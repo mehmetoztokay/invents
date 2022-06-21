@@ -4,7 +4,7 @@
       <div class="filter-item-title">
         <p class="line-height-1 color-primary">Tür</p>
         <div class="filter-select">
-          <SelectItem @selectedOption="selectedOption" :itemList="itemList" />
+          <SelectItem @selectedOption="selectedOption" :itemList="typeList" />
         </div>
       </div>
     </div>
@@ -12,7 +12,7 @@
       <div class="filter-item-title">
         <p class="line-height-1 color-primary">Lokasyon</p>
         <div class="filter-select">
-          <SelectItem @selectedOption="selectedOption" :itemList="itemList" />
+          <SelectItem @selectedOption="selectedOption" :itemList="locationList" />
         </div>
       </div>
     </div>
@@ -48,12 +48,24 @@
         </div>
       </div>
     </div>
+    <div class="filter-item">
+      <div class="filter-item-title">
+        <p class="line-height-1 color-primary">Etkinlik</p>
+        <div class="filter-select">
+          <SelectItem @selectedOption="selectedOption" :itemList="eventList" />
+        </div>
+      </div>
+    </div>
+    <div class="btn-filter">
+      <Button>Ara</Button>
+    </div>
   </div>
 </template>
 <script setup>
   import { range } from 'lodash'
   import { reactive, ref } from 'vue'
   import SelectItem from './SelectItem.vue'
+  import Button from './layout/button.vue'
 
   // For Value of End Date
   const date = ref(new Date())
@@ -62,14 +74,54 @@
     end: date.value
   })
 
-  const itemList = [
+  const typeList = [
     {
-      name: 'Malatya',
-      value: 'Adana'
+      name: 'Tiyatro'
     },
     {
-      name: 'Istanbul',
-      value: 'Karpuz'
+      name: 'Konser'
+    },
+    {
+      name: 'Mezuniyet'
+    },
+    {
+      name: 'Pilavlı'
+    }
+  ]
+
+  const locationList = [
+    {
+      name: 'Malatya'
+    },
+    {
+      name: 'İstanbul'
+    },
+    {
+      name: 'Kırklareli'
+    },
+    {
+      name: 'Ankara'
+    },
+    {
+      name: 'Muş'
+    }
+  ]
+
+  const eventList = [
+    {
+      name: "Michelango'yu Anlamak"
+    },
+    {
+      name: 'Pena Büyük Gün Konseri'
+    },
+    {
+      name: "İstanbul'un Fethi"
+    },
+    {
+      name: 'On İkinci Gece: Shakespeare'
+    },
+    {
+      name: 'Neden: Doğan Cüceloğlu'
     }
   ]
 
@@ -90,14 +142,14 @@
     min-height: rem(100);
     margin: 0 auto;
     background-color: $color-black;
-    max-width: calc(100% - rem(140));
+    max-width: calc(100% - rem(100));
     border-radius: rem(50);
     padding: rem(22) rem(80) rem(10) rem(80);
     display: flex;
-    gap: rem(40);
 
     .filter-item {
-      max-width: 210px;
+      max-width: rem(210);
+      padding: rem(15);
       .filter-item-title {
         font-size: rem(18);
         p {
@@ -151,6 +203,13 @@
           }
         }
       }
+    }
+
+    .btn-filter {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      justify-content: end;
     }
   }
 </style>

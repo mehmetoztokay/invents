@@ -19,8 +19,7 @@
       outline: 0;
     }
     &:hover {
-      background-color: $color-white;
-      color: $color-primary;
+      background-color: $color-primary-dark;
     }
   }
 </style>
