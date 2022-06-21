@@ -3,9 +3,9 @@
     <div class="banner absolute-header">
       <div class="container">
         <div class="slogan">
-          <p class="line-height-1">her anın <span class="color-primary">iventsle</span></p>
+          <p class="line-height-1 text-center">her anın <span class="color-primary">iventsle</span></p>
         </div>
-        <div class="filter-container">
+        <div class="filter-container" style="display: none">
           <FilterMain />
         </div>
       </div>

@@ -76,6 +76,7 @@
     border-radius: 10px;
     display: inline-block;
     position: relative;
+    max-width: 100%;
     .select-header {
       user-select: none;
       padding: 7px 10px;
@@ -83,6 +84,8 @@
       background-color: transparent;
       color: $color-white;
       border-radius: 7px;
+      max-width: 100%;
+      display: block;
       cursor: pointer;
       &:focus {
         outline: none;
@@ -93,12 +96,20 @@
       position: absolute;
       background-color: $color-white;
       padding: 2px;
-      min-width: 100%;
+      max-width: 100%;
       left: 50%;
       transform: translateX(-50%);
       display: inline-block;
       top: calc(100% + 5px);
       border-radius: 7px;
+      width: 100%;
+      max-height: rem(200);
+      overflow-y: auto;
+      scrollbar-width: 0;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
   .select-enter {

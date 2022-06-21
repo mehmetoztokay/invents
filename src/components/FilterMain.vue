@@ -144,7 +144,7 @@
     background-color: $color-black;
     max-width: calc(100% - rem(100));
     border-radius: rem(50);
-    padding: rem(22) rem(80) rem(10) rem(80);
+    padding: rem(10) rem(80) rem(3) rem(80);
     display: flex;
 
     .filter-item {
