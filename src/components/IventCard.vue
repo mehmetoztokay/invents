@@ -53,6 +53,10 @@
       height: rem(600);
     }
 
+    @media screen and (max-width: $screen-md) {
+      height: rem(550);
+    }
+
     .card-img {
       position: absolute;
       left: 0;
@@ -111,7 +115,9 @@
         .info-con {
           display: flex;
           align-items: center;
-          margin-right: rem(30);
+          &:not(:last-child) {
+            margin-right: rem(30);
+          }
 
           .text {
             margin-top: rem(-4);

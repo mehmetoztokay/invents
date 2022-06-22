@@ -114,8 +114,10 @@
     }
 
     @media screen and (max-width: $screen-xs) {
+      width: 100%;
       .select-header {
         background-color: $color-black-off;
+        width: 100%;
       }
     }
   }

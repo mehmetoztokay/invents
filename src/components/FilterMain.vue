@@ -179,6 +179,11 @@
                 &:focus {
                   background-color: $color-black-off;
                 }
+
+                @media screen and (max-width: $screen-xs) {
+                  width: 100%;
+                  background-color: $color-black-off;
+                }
               }
             }
 
@@ -191,6 +196,10 @@
                 padding-bottom: 0;
                 color: $color-white-off;
                 cursor: default;
+              }
+
+              @media screen and (max-width: $screen-xs) {
+                margin-top: 0;
               }
             }
           }

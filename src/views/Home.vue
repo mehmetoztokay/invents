@@ -170,6 +170,11 @@
     max-width: 100%;
     min-height: rem(700);
 
+    @media screen and (max-width: $screen-sm) {
+      padding: rem(120) 0;
+      min-height: rem(600);
+    }
+
     .container {
       display: flex;
       align-items: center;
