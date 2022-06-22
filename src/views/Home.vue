@@ -113,6 +113,10 @@
     position: relative;
     z-index: 1;
 
+    @media screen and (max-width: $screen-md) {
+      background-attachment: scroll;
+    }
+
     &::after {
       content: '';
       position: absolute;
