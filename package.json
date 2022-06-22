@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "swiper": "^8.2.4",
     "v-calendar": "^3.0.0-alpha.8",
     "vue": "^3.2.25",
     "vue-router": "^4.0.16"

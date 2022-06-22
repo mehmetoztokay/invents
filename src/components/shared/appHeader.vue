@@ -49,7 +49,7 @@
     position: absolute;
     width: 100%;
     padding: rem(20) 0;
-    z-index: 1;
+    z-index: 2;
 
     .container {
       display: flex;

@@ -10,33 +10,73 @@
         </div>
       </div>
     </div>
+    <div class="new-ivents">
+      <div class="container">
+        <div class="left-area">
+          <p class="title line-height-1">yeni <span class="color-primary">ivents</span> keşfet</p>
+          <p class="description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod euismod odio nec neque placerat. Adipiscing sagittis neque, blandit lobortis sit augue. In morbi eget
+            tellus cursus.
+            <br />
+            <br />
+            Commodo justo est enim sed quam quam viverra. Sapien sit quis eget at volutpat molestie.
+          </p>
+          <div class="btn">
+            <Button>Daha Fazla</Button>
+          </div>
+        </div>
+        <div class="right-area">
+          <swiper :slides-per-view="3" :space-between="15" @swiper="onSwiper" @slideChange="onSlideChange" :breakpoints="swiperOptions.breakpoints">
+            <swiper-slide> <IventCard /> </swiper-slide>
+            <swiper-slide> <IventCard /> </swiper-slide>
+            <swiper-slide> <IventCard /> </swiper-slide>
+            <swiper-slide> <IventCard /> </swiper-slide>
+            <swiper-slide> <IventCard /> </swiper-slide>
+          </swiper>
+        </div>
+      </div>
+    </div>
     <div style="height: 7000px"></div>
   </div>
 </template>
 <script setup>
   import FilterMain from '../components/FilterMain.vue'
-  import { provide } from 'vue'
+  import { provide, ref } from 'vue'
+  import Button from '../components/layout/button.vue'
 
-  const items = [
-    {
-      title: 'Mehmet',
-      value: '1'
-    },
-    {
-      title: 'Ahmet',
-      value: '2'
-    },
-    {
-      title: 'Selam',
-      value: '3'
-    },
-    {
-      title: 'Reis',
-      value: '4'
+  import { Swiper, SwiperSlide } from 'swiper/vue'
+  import 'swiper/css'
+
+  import IventCard from '../components/IventCard.vue'
+
+  const iventImage = 'https://images.pexels.com/photos/4607716/pexels-photo-4607716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+
+  provide('iventImage', iventImage)
+
+  const swiperOptions = {
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 15
+      },
+      576: {
+        slidesPerView: 1,
+        spaceBetween: 15
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 15
+      },
+      992: {
+        slidesPerView: 2,
+        spaceBetween: 15
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 15
+      }
     }
-  ]
-
-  provide('items', items)
+  }
 </script>
 <style lang="scss" scoped>
   @import '@/assets/scss/_var.scss';
@@ -46,7 +86,7 @@
     background-size: cover;
     background-position: center bottom;
     position: relative;
-    z-index: 0;
+    z-index: 1;
 
     &::after {
       content: '';
@@ -66,6 +106,11 @@
       align-items: center;
       position: relative;
       z-index: 1;
+      padding-bottom: rem(80);
+
+      @media screen and (max-width: $screen-lg) {
+        min-height: rem(500);
+      }
 
       .slogan {
         margin-top: 20vh;
@@ -102,12 +147,96 @@
         width: 100%;
         margin-top: rem(120);
 
+        @media screen and (max-width: $screen-lg) {
+          margin-top: rem(100);
+        }
+
         @media screen and (max-width: $screen-md) {
           margin-top: rem(80);
         }
 
-        @media screen and (max-width: $screen-xxl) {
+        @media screen and (max-width: $screen-xs) {
           margin-top: rem(50);
+        }
+      }
+    }
+  }
+
+  .new-ivents {
+    background-color: $color-black;
+    padding: rem(200) 0;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    min-height: rem(700);
+
+    .container {
+      display: flex;
+      align-items: center;
+      position: relative;
+      flex-wrap: wrap;
+      .left-area {
+        width: 40%;
+        padding-right: 5%;
+        .title {
+          color: $color-white;
+          font-size: rem(65);
+          font-weight: $weight-700;
+        }
+        .description {
+          color: $color-white-off;
+          font-weight: $weight-200;
+          margin-top: rem(20);
+        }
+        .btn {
+          margin-top: rem(20);
+        }
+
+        @media screen and (max-width: $screen-lg) {
+          width: 50%;
+        }
+
+        @media screen and (max-width: $screen-md) {
+          width: 45%;
+          padding-left: 3%;
+          .title {
+            font-size: rem(45);
+          }
+          .description {
+            font-size: rem(13);
+          }
+        }
+
+        @media screen and (max-width: $screen-sm) {
+          width: 100%;
+          padding-left: 3%;
+          margin-bottom: rem(50);
+          .title {
+            font-size: rem(45);
+          }
+          .description {
+            font-size: rem(13);
+          }
+        }
+      }
+
+      .right-area {
+        width: 100%;
+        left: 40%;
+        position: absolute;
+
+        @media screen and (max-width: $screen-lg) {
+          left: 50%;
+        }
+
+        @media screen and (max-width: $screen-md) {
+          left: 45%;
+          width: 50%;
+        }
+
+        @media screen and (max-width: $screen-sm) {
+          width: 100%;
+          position: static;
         }
       }
     }
