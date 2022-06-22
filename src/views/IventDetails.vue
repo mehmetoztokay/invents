@@ -70,6 +70,31 @@
       </div>
     </div>
 
+    <div class="ivent-slide">
+      <swiper :slides-per-view="1" :space-between="0" @swiper="onSwiper" @slideChange="onSlideChange" :breakpoints="swiperOptions.breakpoints">
+        <swiper-slide>
+          <div class="slide-item">
+            <img src="../assets/img/ivents/ivents-list/on-ikinci-gece/main.jpg" alt="" />
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="slide-item">
+            <img src="../assets/img/ivents/ivents-list/on-ikinci-gece/main.jpg" alt="" />
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="slide-item">
+            <img src="../assets/img/ivents/ivents-list/on-ikinci-gece/main.jpg" alt="" />
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="slide-item">
+            <img src="../assets/img/ivents/ivents-list/on-ikinci-gece/main.jpg" alt="" />
+          </div>
+        </swiper-slide>
+      </swiper>
+    </div>
+
     <appFooter />
   </div>
 </template>
@@ -79,6 +104,7 @@
 
   import { Swiper, SwiperSlide } from 'swiper/vue'
   import 'swiper/css'
+  import 'swiper/scss/navigation'
 
   import appFooter from '../components/shared/appFooter.vue'
   import Type from '../components/icons/Type.vue'
@@ -90,27 +116,7 @@
     breakpoints: {
       0: {
         slidesPerView: 1,
-        spaceBetween: 15
-      },
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 15
-      },
-      576: {
-        slidesPerView: 1,
-        spaceBetween: 15
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 15
-      },
-      992: {
-        slidesPerView: 2,
-        spaceBetween: 15
-      },
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 15
+        spaceBetween: 0
       }
     }
   }
@@ -372,6 +378,38 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .ivent-slide {
+    padding: rem(100) 0;
+    .slide-item {
+      height: rem(700);
+      width: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+
+    @media screen and (max-width: $screen-md) {
+      .slide-item {
+        height: rem(500);
+      }
+    }
+
+    @media screen and (max-width: $screen-sm) {
+      .slide-item {
+        height: rem(350);
+      }
+    }
+
+    @media screen and (max-width: $screen-xs) {
+      .slide-item {
+        height: rem(250);
       }
     }
   }
