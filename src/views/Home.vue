@@ -36,6 +36,26 @@
         </div>
       </div>
     </div>
+    <div class="video">
+      <div class="top">
+        <div class="wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/_RgV1bxzOnU?vq=hd1080&autoplay=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&controls=0&disablekb=1&loop=1&muted=1&playlist=_RgV1bxzOnU"
+            width="560"
+            height="315"
+            title="test"
+            frameborder="0"
+            loop
+          ></iframe>
+        </div>
+      </div>
+      <div class="content">
+        <p class="text">her anın <span class="color-primary">iventsle</span></p>
+        <div class="btn">
+          <Button>Ivents Keşfet</Button>
+        </div>
+      </div>
+    </div>
     <div style="height: 7000px"></div>
   </div>
 </template>
@@ -55,6 +75,10 @@
 
   const swiperOptions = {
     breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 15
+      },
       320: {
         slidesPerView: 1,
         spaceBetween: 15
@@ -242,6 +266,110 @@
         @media screen and (max-width: $screen-sm) {
           width: 100%;
           position: static;
+        }
+      }
+    }
+  }
+
+  .video {
+    position: relative;
+    z-index: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(0, 0, 0);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 95%);
+      z-index: 1;
+    }
+    .top {
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      position: relative;
+      object-fit: cover;
+
+      .wrapper {
+        position: relative;
+        padding-bottom: 200%;
+        transform: translateY(-35.95%);
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .content {
+      position: absolute;
+      bottom: 30%;
+      z-index: 2;
+      color: $color-white;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .text {
+        text-align: center;
+        font-weight: $weight-700;
+        font-size: rem(80);
+        line-height: 1.3;
+      }
+
+      .btn {
+        margin: 0 auto;
+        margin-top: rem(20);
+      }
+
+      @media screen and (max-width: $screen-lg) {
+        bottom: 20%;
+
+        .text {
+          font-size: rem(60);
+        }
+
+        .btn {
+          margin-top: rem(5);
+        }
+      }
+
+      @media screen and (max-width: $screen-md) {
+        .text {
+          font-size: rem(50);
+        }
+
+        .btn {
+          margin-top: rem(7);
+        }
+      }
+
+      @media screen and (max-width: $screen-sm) {
+        .text {
+          font-size: rem(40);
+        }
+
+        .btn {
+          margin-top: rem(3);
+        }
+      }
+
+      @media screen and (max-width: $screen-xs) {
+        bottom: 15%;
+
+        .text {
+          font-size: rem(25);
+        }
+
+        .btn {
+          margin-top: rem(3);
         }
       }
     }

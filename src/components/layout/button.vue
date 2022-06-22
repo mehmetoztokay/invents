@@ -21,5 +21,10 @@
     &:hover {
       background-color: $color-primary-dark;
     }
+
+    @media screen and (max-width: $screen-md) {
+      padding: rem(7) rem(13);
+      font-size: rem(12);
+    }
   }
 </style>
