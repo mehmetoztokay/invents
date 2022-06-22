@@ -1,78 +1,60 @@
 <template>
   <div class="main">
-    <div class="banner absolute-header" style="background-image: url('/src/assets/img/home/banner-home.jpg')">
+    <div class="banner is-detail absolute-header" style="background-image: url('/src/assets/img/ivents/ivents-list/on-ikinci-gece/main.jpg')">
       <div class="container">
-        <div class="slogan">
-          <p class="line-height-1 text-center">her anın <span class="color-primary">iventsle</span></p>
-        </div>
-        <div class="filter-container">
-          <FilterMain />
-        </div>
-      </div>
-    </div>
-    <div class="new-ivents">
-      <div class="container">
-        <div class="left-area">
-          <p class="title line-height-1">yeni <span class="color-primary">ivents</span> keşfet</p>
-          <p class="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod euismod odio nec neque placerat. Adipiscing sagittis neque, blandit lobortis sit augue. In morbi eget
-            tellus cursus.
-            <br />
-            <br />
-            Commodo justo est enim sed quam quam viverra. Sapien sit quis eget at volutpat molestie.
+        <div class="detail-content">
+          <p class="title">
+            On ikinci Gece: <br />
+            Shakspeare Tiyatrosu
           </p>
-          <div class="btn">
-            <Button>Daha Fazla</Button>
+          <div class="info">
+            <div class="info-item">
+              <div class="icon">
+                <Type />
+              </div>
+              <p class="text">Tiyatro</p>
+            </div>
+
+            <div class="info-item">
+              <div class="icon">
+                <Calendar />
+              </div>
+              <p class="text">27 / 06 / 2022</p>
+            </div>
+
+            <div class="info-item">
+              <div class="icon">
+                <Clock />
+              </div>
+              <p class="text">16:00 - 18:00</p>
+            </div>
+
+            <div class="info-item">
+              <div class="icon">
+                <Location />
+              </div>
+              <p class="text">İstanbul</p>
+            </div>
           </div>
         </div>
-        <div class="right-area">
-          <swiper :slides-per-view="3" :space-between="15" @swiper="onSwiper" @slideChange="onSlideChange" :breakpoints="swiperOptions.breakpoints">
-            <swiper-slide> <IventCard /> </swiper-slide>
-            <swiper-slide> <IventCard /> </swiper-slide>
-            <swiper-slide> <IventCard /> </swiper-slide>
-            <swiper-slide> <IventCard /> </swiper-slide>
-            <swiper-slide> <IventCard /> </swiper-slide>
-          </swiper>
-        </div>
       </div>
     </div>
-    <div class="video">
-      <div class="top">
-        <div class="wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/_RgV1bxzOnU?vq=hd1080&autoplay=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&controls=0&disablekb=1&loop=1&muted=1&playlist=_RgV1bxzOnU"
-            width="560"
-            height="315"
-            title="test"
-            frameborder="0"
-            loop
-          ></iframe>
-        </div>
-      </div>
-      <div class="content">
-        <p class="text">her anın <span class="color-primary">iventsle</span></p>
-        <div class="btn">
-          <Button>Ivents Keşfet</Button>
-        </div>
-      </div>
-    </div>
+
     <appFooter />
   </div>
 </template>
 <script setup>
-  import FilterMain from '../components/FilterMain.vue'
   import { provide, ref } from 'vue'
-  import Button from '../components/layout/button.vaue'
+  import Button from '../components/layout/button.vue'
 
   import { Swiper, SwiperSlide } from 'swiper/vue'
   import 'swiper/css'
 
-  import IventCard from '../components/IventCard.vue'
   import appFooter from '../components/shared/appFooter.vue'
-
-  const iventImage = 'main.jpg'
-
-  provide('iventImage', iventImage)
+  import Type from '../components/icons/Type.vue'
+  import Calendar from '../components/icons/Calendar.vue'
+  import Clock from '../components/icons/Clock.vue'
+  import Location from '../components/icons/Location.vue'
 
   const swiperOptions = {
     breakpoints: {
@@ -106,192 +88,103 @@
 <style lang="scss" scoped>
   @import '@/assets/scss/_var.scss';
 
-  .new-ivents {
-    background-color: $color-black;
-    padding: rem(200) 0;
-    position: relative;
-    overflow: hidden;
-    max-width: 100%;
-    min-height: rem(700);
+  .banner.is-detail {
+    .container {
+      justify-content: center;
+      margin-top: rem(-50);
+      align-items: flex-start;
+      .detail-content {
+        .title {
+          font-size: rem(60);
+          color: $color-white;
+          font-weight: $weight-700;
+          line-height: 1.2;
+        }
+
+        .info {
+          display: flex;
+          flex-wrap: wrap;
+          // max-width: rem(400);
+          margin-top: rem(15);
+          .info-item {
+            display: flex;
+            align-items: center;
+            margin-right: rem(25);
+            padding: rem(5) 0;
+            .icon {
+              margin-right: rem(10);
+            }
+
+            .text {
+              color: $color-white;
+              margin-top: rem(-2);
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: $screen-lg) {
+      .container {
+        margin-top: rem(-30);
+        .detail-content {
+          .title {
+            font-size: rem(40);
+          }
+          .info {
+            margin-top: rem(10);
+            .info-item {
+              margin-right: rem(20);
+              .icon {
+                margin-right: rem(7);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: $screen-md) {
+      .container {
+        margin-top: rem(0);
+        .detail-content {
+          .title {
+            font-size: rem(35);
+          }
+          .info {
+            margin-top: rem(10);
+            flex-wrap: wrap;
+            .info-item {
+              margin-right: rem(20);
+              .icon {
+                margin-right: rem(7);
+              }
+            }
+          }
+        }
+      }
+    }
 
     @media screen and (max-width: $screen-sm) {
-      padding: rem(120) 0;
-      min-height: rem(600);
-    }
-
-    .container {
-      display: flex;
-      align-items: center;
-      position: relative;
-      flex-wrap: wrap;
-      .left-area {
-        width: 40%;
-        padding-right: 5%;
-        .title {
-          color: $color-white;
-          font-size: rem(65);
-          font-weight: $weight-700;
-        }
-        .description {
-          color: $color-white-off;
-          font-weight: $weight-200;
-          margin-top: rem(20);
-        }
-        .btn {
-          margin-top: rem(20);
-        }
-
-        @media screen and (max-width: $screen-lg) {
-          width: 50%;
-        }
-
-        @media screen and (max-width: $screen-md) {
-          width: 45%;
-          padding-left: 3%;
+      .container {
+        .detail-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           .title {
-            font-size: rem(45);
+            font-size: rem(30);
+            text-align: center;
           }
-          .description {
-            font-size: rem(13);
+          .info {
+            margin-top: rem(7);
+            justify-content: center;
+            .info-item {
+              margin-right: rem(10);
+              .icon {
+                margin-right: rem(7);
+              }
+            }
           }
-        }
-
-        @media screen and (max-width: $screen-sm) {
-          width: 100%;
-          padding-left: 3%;
-          margin-bottom: rem(50);
-          .title {
-            font-size: rem(45);
-          }
-          .description {
-            font-size: rem(13);
-          }
-        }
-      }
-
-      .right-area {
-        width: 100%;
-        left: 40%;
-        position: absolute;
-
-        @media screen and (max-width: $screen-lg) {
-          left: 50%;
-        }
-
-        @media screen and (max-width: $screen-md) {
-          left: 45%;
-          width: 50%;
-        }
-
-        @media screen and (max-width: $screen-sm) {
-          width: 100%;
-          position: static;
-        }
-      }
-    }
-  }
-
-  .video {
-    position: relative;
-    z-index: 0;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgb(0, 0, 0);
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 95%);
-      z-index: 1;
-      pointer-events: none;
-    }
-    .top {
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      position: relative;
-      object-fit: cover;
-
-      .wrapper {
-        position: relative;
-        padding-bottom: 200%;
-        transform: translateY(-35.95%);
-
-        iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-
-    .content {
-      position: absolute;
-      bottom: 30%;
-      z-index: 2;
-      color: $color-white;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      .text {
-        text-align: center;
-        font-weight: $weight-700;
-        font-size: rem(80);
-        line-height: 1.3;
-        pointer-events: none;
-      }
-
-      .btn {
-        margin: 0 auto;
-        margin-top: rem(20);
-      }
-
-      @media screen and (max-width: $screen-lg) {
-        bottom: 20%;
-
-        .text {
-          font-size: rem(60);
-        }
-
-        .btn {
-          margin-top: rem(5);
-        }
-      }
-
-      @media screen and (max-width: $screen-md) {
-        .text {
-          font-size: rem(50);
-        }
-
-        .btn {
-          margin-top: rem(7);
-        }
-      }
-
-      @media screen and (max-width: $screen-sm) {
-        .text {
-          font-size: rem(40);
-        }
-
-        .btn {
-          margin-top: rem(3);
-        }
-      }
-
-      @media screen and (max-width: $screen-xs) {
-        bottom: 15%;
-
-        .text {
-          font-size: rem(25);
-        }
-
-        .btn {
-          margin-top: rem(3);
         }
       }
     }
