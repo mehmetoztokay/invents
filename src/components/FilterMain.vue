@@ -143,6 +143,10 @@
     .filter-item {
       max-width: rem(260);
       padding: rem(15) rem(25);
+
+      @media screen and (max-width: $screen-xs) {
+        padding: rem(15) rem(10);
+      }
       .filter-item-title {
         font-size: rem(18);
         p {
