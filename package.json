@@ -8,12 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^0.27.2",
     "swiper": "^8.2.4",
     "v-calendar": "^3.0.0-alpha.8",
     "vue": "^3.2.25",
-    "vue-router": "^4.0.16",
-    "vuex": "^4.0.2"
+    "vue-router": "^4.0.16"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
