@@ -62,7 +62,7 @@
 <script setup>
   import FilterMain from '../components/FilterMain.vue'
   import { provide, ref } from 'vue'
-  import Button from '../components/layout/button.vue'
+  import Button from '../components/layout/button.vaue'
 
   import { Swiper, SwiperSlide } from 'swiper/vue'
   import 'swiper/css'

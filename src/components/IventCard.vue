@@ -23,7 +23,7 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et arcu eleifend amet, vitae ornare tempor. Quisque donec eget lectus eu vitae, viverra sodales vel.
       </p>
       <div class="btn-con">
-        <router-link class="btn" to="/">Daha Fazla</router-link>
+        <router-link class="btn" to="ivent-details">Daha Fazla</router-link>
       </div>
     </div>
   </div>
@@ -34,7 +34,7 @@
   import Calendar from './icons/Calendar.vue'
   import Location from './icons/Location.vue'
 
-  const iventImage = inject('iventImage')
+  const iventImage = 'src/assets/img/ivents/ivents-list/on-ikinci-gece/' + inject('iventImage')
 
   console.log(iventImage)
 </script>
@@ -69,6 +69,12 @@
       overflow: hidden;
       z-index: 2;
 
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
       &::before,
       &::after {
         content: '';
@@ -80,13 +86,13 @@
       }
 
       &::before {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.3);
         z-index: 0;
       }
 
       &::after {
         background: rgb(0, 0, 0);
-        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 50%);
         z-index: 1;
       }
     }
@@ -111,6 +117,7 @@
       .info {
         margin-bottom: rem(15);
         display: flex;
+        flex-wrap: wrap;
 
         .info-con {
           display: flex;
@@ -122,7 +129,7 @@
           .text {
             margin-top: rem(-4);
             margin-left: rem(7);
-            font-size: rem(15);
+            font-size: rem(13);
           }
         }
       }
@@ -166,7 +173,7 @@
       }
 
       @media screen and (max-width: $screen-md) {
-        padding: rem(40) rem(20);
+        padding: rem(40) rem(16);
 
         .title {
           font-size: rem(20);
@@ -175,8 +182,6 @@
         .info {
           flex-direction: column;
           margin-bottom: rem(5);
-          .info-con {
-          }
         }
       }
     }

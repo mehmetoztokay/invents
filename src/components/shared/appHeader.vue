@@ -20,7 +20,7 @@
       <div class="nav-container" :class="{ 'is-active': menuBtn }">
         <ul class="nav">
           <li class="nav-link">
-            <router-link to="/">Taze</router-link>
+            <router-link to="/ivents">Ivents</router-link>
           </li>
           <li class="nav-link">
             <router-link to="/">Yakında</router-link>

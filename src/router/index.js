@@ -5,6 +5,16 @@ const routes = [
     name: 'HomePage',
     path: '/',
     component: () => import('../views/Home.vue')
+  },
+  {
+    name: 'IventsPage',
+    path: '/ivents',
+    component: () => import('../views/Ivents.vue')
+  },
+  {
+    name: 'IventDetailsPage',
+    path: '/ivent-details',
+    component: () => import('../views/IventDetails.vue')
   }
 ]
 
