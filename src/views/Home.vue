@@ -56,7 +56,7 @@
         </div>
       </div>
     </div>
-    <div style="height: 7000px"></div>
+    <appFooter />
   </div>
 </template>
 <script setup>
@@ -68,6 +68,7 @@
   import 'swiper/css'
 
   import IventCard from '../components/IventCard.vue'
+  import appFooter from '../components/shared/appFooter.vue'
 
   const iventImage = 'https://images.pexels.com/photos/4607716/pexels-photo-4607716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 
@@ -285,6 +286,7 @@
       background: rgb(0, 0, 0);
       background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 95%);
       z-index: 1;
+      pointer-events: none;
     }
     .top {
       padding-bottom: 56.25%;
@@ -322,6 +324,7 @@
         font-weight: $weight-700;
         font-size: rem(80);
         line-height: 1.3;
+        pointer-events: none;
       }
 
       .btn {
