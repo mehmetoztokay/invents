@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class="banner absolute-header" style="background-image: url('/src/assets/img/home/banner-home.jpg')">
+    <div class="banner absolute-header" style="background-image: url('../assets/img/home/banner-home.jpg')">
       <div class="container">
         <div class="slogan">
           <p class="line-height-1 text-center">her anın <span class="color-primary">iventsle</span></p>
@@ -17,6 +17,9 @@
           <p class="description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod euismod odio nec neque placerat. Adipiscing sagittis neque, blandit lobortis sit augue. In morbi eget
             tellus cursus.
+            <pre>
+              {{types}}
+            </pre>
             <br />
             <br />
             Commodo justo est enim sed quam quam viverra. Sapien sit quis eget at volutpat molestie.
@@ -61,14 +64,24 @@
 </template>
 <script setup>
   import FilterMain from '../components/FilterMain.vue'
-  import { provide, ref } from 'vue'
+  import { provide, ref, onMounted, computed } from 'vue'
   import Button from '../components/layout/button.vue'
+  import { useStore } from 'vuex'
 
   import { Swiper, SwiperSlide } from 'swiper/vue'
   import 'swiper/css'
 
   import IventCard from '../components/IventCard.vue'
   import appFooter from '../components/shared/appFooter.vue'
+  const store = useStore()
+
+  onMounted(() => {
+    store.dispatch('types/fetchList')
+  })
+
+  const types = computed(()=>{
+    return store.getters["types/_items"]
+  })
 
   const iventImage = 'main.jpg'
 
