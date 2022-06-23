@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-img">
-      <img :src="iventImage" alt="" />
+      <img src="/src/assets/img/ivents/ivents-list/on-ikinci-gece/main.jpg" alt="" />
     </div>
     <div class="content">
       <div class="title">Michelangelo’yu Bugün Anlamak</div>
@@ -34,9 +34,7 @@
   import Calendar from './icons/Calendar.vue'
   import Location from './icons/Location.vue'
 
-  const iventImage = 'src/assets/img/ivents/ivents-list/on-ikinci-gece/' + inject('iventImage')
-
-  console.log(iventImage)
+  const iventImage = inject('iventImage')
 </script>
 <style lang="scss" scoped>
   @import '@/assets/scss/_var.scss';

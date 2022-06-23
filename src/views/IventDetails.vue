@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class="banner is-detail absolute-header" style="background-image: url('/src/assets/img/ivents/ivents-list/on-ikinci-gece/main.jpg')">
+    <div class="banner is-detail absolute-header" style="background-image: url('../src/assets/img/ivents/ivents-list/on-ikinci-gece/main.jpg')">
       <div class="container">
         <div class="detail-content">
           <p class="title">
@@ -125,6 +125,8 @@
   @import '@/assets/scss/_var.scss';
 
   .banner.is-detail {
+    background-image: url('@/assets/img/ivents/ivents-list/on-ikinci-gece/main.jpg');
+
     .container {
       justify-content: center;
       margin-top: rem(-50);

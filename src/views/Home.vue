@@ -106,6 +106,10 @@
 <style lang="scss" scoped>
   @import '@/assets/scss/_var.scss';
 
+  .banner {
+    background-image: url('@/assets/img/home/banner-home.jpg');
+  }
+
   .new-ivents {
     background-color: $color-black;
     padding: rem(200) 0;
